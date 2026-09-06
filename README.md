@@ -34,11 +34,11 @@
 >| В файле `terraform.tfvars` присутствовали неиспользуемые переменные `vms_resources` и >`metadata` (из предыдущих ДЗ), вызывавшие предупреждения. | Удалили эти переменные, чтобы >избежать лишних предупреждений. |
 
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud .
->![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/main/img/1.png)
+>![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/1.png)
 
->![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/main/img/2.png)
+>![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/2.png)
 
->![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/main/img/3.png)
+>![задание 1](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/3.png)
 
 ------
 
@@ -56,11 +56,11 @@ variable "each_vm" {
 4. Используйте функцию file в local-переменной для считывания ключа ~/.ssh/id_rsa.pub и его последующего использования в блоке metadata, взятому из ДЗ 2.
 5. Инициализируйте проект, выполните код.
 
->![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/main/img/4.png)
+>![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/4.png)
 
->![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/main/img/5.png)
+>![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/5.png)
 
->![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/main/img/6.png)
+>![задание 2](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/6.png)
 
 ------
 
@@ -69,11 +69,11 @@ variable "each_vm" {
 1. Создайте 3 одинаковых виртуальных диска размером 1 Гб с помощью ресурса yandex_compute_disk и мета-аргумента count в файле **disk_vm.tf** .
 2. Создайте в том же файле **одиночную**(использовать count или for_each запрещено из-за задания №4) ВМ c именем "storage"  . Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
 
->![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/main/img/7.png)
+>![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/7.png)
 
->![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/main/img/8.png)
+>![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/8.png)
 
->![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/main/img/9.png)
+>![задание 3](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/9.png)
 
 ------
 
@@ -100,16 +100,16 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 Пример fqdn: ```web1.ru-central1.internal```(в случае указания переменной hostname(не путать с переменной name)); ```fhm8k1oojmm5lie8i22a.auto.internal```(в случае отсутвия перменной hostname - автоматическая генерация имени,  зона изменяется на auto). нужную вам переменную найдите в документации провайдера или terraform console.
 4. Выполните код. Приложите скриншот получившегося файла.
 
->![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/main/img/10.png)
+>![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/10.png)
 
->![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/main/img/11.png)
+>![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/11.png)
 
 Для общего зачёта создайте в вашем GitHub-репозитории новую ветку terraform-03. Закоммитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит. 
 **Удалите все созданные ресурсы**.
 
  [ссылка для задания 4](https://github.com/MindMaze74/terraform_dz3/tree/terraform-03/src) (хеш e140255)
 
->![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/main/img/12.png)
+>![задание 4](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/12.png)
 
 ------
 
@@ -138,7 +138,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 ```
 Приложите скриншот вывода команды ```terrafrom output```.
 
->![задание 5*](https://github.com/MindMaze74/terraform_dz3/blob/main/img/13.png)
+>![задание 5*](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/13.png)
 
 ------
 
@@ -151,12 +151,12 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 Для проверки работы уберите у ВМ внешние адреса(nat=false). Этот вариант используется при работе через bastion-сервер.
 Для зачёта предоставьте код вместе с основной частью задания.
 
->![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/main/img/14.png)
+>![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/14.png)
 
 
->![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/main/img/15.png)
+>![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/15.png)
 
->![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/main/img/16.png)
+>![задание 6*](https://github.com/MindMaze74/terraform_dz3/blob/terraform-03/img/16.png)
 
 ### Правила приёма работы
 
