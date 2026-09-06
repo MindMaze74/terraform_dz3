@@ -7,3 +7,11 @@ resource "local_file" "inventory" {
   })
   filename = "${path.module}/inventory.ini"
 }
+
+resource "null_resource" "run_ansible" {
+  depends_on = [local_file.inventory]
+
+  provisioner "local-exec" {
+    command = "ansible-playbook -i inventory.ini playbook.yml"
+  }
+}
