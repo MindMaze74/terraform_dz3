@@ -1,0 +1,20 @@
+# Local .terraform directories and files
+**/.terraform/*
+.terraform*
+
+!.terraformrc
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# own secret vars store.
+personal.auto.tfvars
+
+# Service account keys
+*.json
+!*.tfvars.json
+# Terraform variables files (if any)
+terraform.tfvars
+# Generated inventory
+inventory.ini
